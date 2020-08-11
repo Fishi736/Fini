@@ -1,0 +1,52 @@
+<div class="wrapper">
+    <app-mail></app-mail>
+    <div class="main-panel">
+        <app-header></app-header>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row mt-3 ">
+                    
+                    <div class="col-lg-10 offset-1 ">
+                        <div class="card">
+                            <div class="card-header ">
+                                <h4 class="card-title text-center">Tasks</h4>
+                                <form #ta=ngForm class="form-inline">
+                                    <div class="form-group col-lg-12">
+                                        <textarea type="text" name="task" ngModel required=""
+                                            style=" border: 0; border-bottom: 1px solid rgb(124, 121, 121);"
+                                            class="form-control col-lg-10" placeholder="Add Text"></textarea>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <button type="reset" class="btn btn-primary mb-2" (click)="Send(ta)">
+                                            <i class="fa fa-check" aria-hidden="true"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <div class=" table-responsive">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr *ngFor="let k of tdata; index as i" scope="row">
+                                                <td>{{i+1}}</td>
+                                                <td>{{k.task}}</td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" title="Remove"
+                                                        class="btn btn-danger" (click)="delete(k._id)">
+                                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-footer></app-footer>
+
+    </div>
+</div>

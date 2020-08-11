@@ -1,0 +1,60 @@
+<div class="wrapper">
+  <app-mail></app-mail>
+  <div class="main-panel">
+    <app-header></app-header>
+    <div class="content">
+      <div class="container-fluid ">
+        <div class="row">
+          <div class="col-lg-12 my-5">
+            <div class="card">
+              <div class="card-header ">
+                <img class="card-img-top img-fluid" src="assets/img/b.png" height="20%" alt="">
+
+                <h4 class="card-title">Sent Mails</h4>
+              </div>
+
+              <div class="card-body ">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class="bg-dark text-light">
+                      <th scope="col">To</th>
+                      <th scope="col">Subject</th>
+                      <th scope="col">Text</th>
+                      <th scope="col">Date</th>
+                      <th scope="col"></th>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let k of cdata">
+                        <td><b>{{k.To}}</b></td>
+                        <td>{{k.Subject}}</td>
+                        <td>{{k.Text}}</td>
+                        <td>{{k.Date|date:"dd/MM/yyyy"}}</td>
+                        <td>
+                          <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple"
+                            (click)="delete(k._id)">
+                            <i class="fa fa-trash"></i>
+                          </button>
+                          <div>
+                            <a (click)="readmail(k._id)" routerLinkActive="active" title="Mark as read"
+                              class="btn btn-primary btn-simple ">
+                              <i class="fa fa-envelope-open"></i>
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <app-footer></app-footer>
+
+  </div>
+
+</div>

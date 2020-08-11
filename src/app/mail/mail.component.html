@@ -1,0 +1,118 @@
+<div class="sidebar"  >
+    <div class="sidebar-wrapper">
+        <div class="logo text-center mt-4">
+            <img src="../assets/img/avatar-369-456321.webp" class=" img-fluid" width="45%">
+            <br>
+            <h4>Fini Mail</h4>
+        </div>
+        <ul class="nav">
+           
+            <li class="nav-item bg-dark">
+                <a class="nav-link" data-toggle="modal" data-target="#modelId">
+                    <i class="lnr lnr-bubble"></i>
+                    <p>Compose Mail</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/inbox" routerLinkActive="active">
+                    <i class="lnr lnr-envelope"></i>
+                    <p>Inbox</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/Sent" routerLinkActive="active">
+                    <i class="lnr lnr-rocket"></i>
+                    <p>Sent Mail</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/trash" routerLinkActive="active">
+                    <i class="lnr lnr-trash"></i>
+                    <p>Trash</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/task" routerLinkActive="active">
+                    <i class="lnr lnr-pencil"></i>
+                    <p>Task</p>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-5">
+                <h3 class=" text-center">!! Compose !!</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <form  #ms="ngForm">
+                    <div class="form-group">
+                      <label for="">To : </label>
+                    <input type="email" name="To" class="form-control"
+                        [ngClass]="{'is-invalid':!To?.valid && To?.touched,'is-valid':To?.valid && To?.touched}" ngModel #To="ngModel"
+                        required pattern="(\w+?@\w+?\x2E.+)">
+                    <small *ngIf="To?.errors?.required && To?.touched" class="text-danger">Email is required</small>
+                    <small *ngIf="To?.errors?.pattern && To?.touched" class="text-danger">Email is invalid</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Subject</label>
+                        <input type="text" name="Subject" id="" class="form-control" aria-describedby="helpId" ngModel required="">
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="">Message</label>
+                        <textarea type="text" class="form-control mb-4" rows="3" style="height:100%;" name="Text" ngModel required=""></textarea>
+
+                    </div>
+                    <div class="form-group ">
+                        <button type="button" class="btnn badge-pill text-white btn-block " data-dismiss="modal" type="reset"
+                            (click)="Send(ms)">
+                            <span class="lnr lnr-location"></span> Send</button>
+                    </div>
+                </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

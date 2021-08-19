@@ -259,7 +259,6 @@ body>.navbar-collapse .nav li .nav-link {
 .sidebar .nav li .nav-link:hover,
 body>.navbar-collapse .nav li .nav-link:hover {
     background: rgba(255, 255, 255, 0.13);
-    opacity: 1;
 }
 
 .sidebar .nav li .nav-link p,

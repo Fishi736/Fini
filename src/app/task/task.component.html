@@ -6,15 +6,15 @@
             <div class="container-fluid">
                 <div class="row mt-3 ">
                     
-                    <div class="col-lg-10 offset-1 ">
+                    <div class="col-lg-8 col-md-10 col-sm-12 offset-1">
                         <div class="card">
                             <div class="card-header ">
-                                <h4 class="card-title text-center">Tasks</h4>
+                                <h4 class="card-title text-center mb-2">Tasks</h4>
                                 <form #ta=ngForm class="form-inline">
-                                    <div class="form-group col-lg-12">
+                                    <div class="form-group col-md-12 col-sm-12">
                                         <textarea type="text" name="task" ngModel required=""
                                             style=" border: 0; border-bottom: 1px solid rgb(124, 121, 121);"
-                                            class="form-control col-lg-10" placeholder="Add Text"></textarea>
+                                            class="form-control col-md-10 col-sm-10" placeholder="Add Text"></textarea>
                                         &nbsp;&nbsp;&nbsp;
                                         <button type="reset" class="btn btn-primary mb-2" (click)="Send(ta)">
                                             <i class="fa fa-check" aria-hidden="true"></i></button>

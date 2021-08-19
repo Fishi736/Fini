@@ -1,19 +1,27 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Mongouser:zxas@cluster0-jammv.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
+
+
+mongoose.connect("mongodb+srv://myMail:p8ZlvpDkxLFDWeOk@cluster0.1wnnb.mongodb.net/myMailCollection?retryWrites=true&w=majority", {
+       useNewUrlParser: true,
+       useUnifiedTopology: true,
+
+})
+       .then(() => console.log("Database connected!"))
+       .catch(err => console.log(err));
 
 const app = express();
 app.use(cors());
 
-const myapi = require('./REST/contactapi');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+const myapi = require('./REST/contactapi.js');
 app.use('/', myapi);
 
 
-http.createServer(app).listen(process.env.PORT || 8000);
-console.log("Backend Server iS On=", process.env.PORT || 8000);
+http.createServer(app).listen(process.env.PORT || 8080);
+console.log("Backend Server iS On=", process.env.PORT || 8080);
